@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web to Lead Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .row .half {
+      flex: 1;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Contact Us</h2>
+
+  <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DDd0000008fw5" method="POST">
+    <input type="hidden" name="oid" value="00DDd0000008fw5" />
+    <input type="hidden" name="retURL" value="http://www.google.com" />
+
+    <!-- Company -->
+    <label for="company">Company</label>
+    <input id="company" name="company" type="text" maxlength="40" />
+
+    <!-- First Name / Last Name Row -->
+    <div class="row">
+      <div class="half">
+        <label for="first_name">First Name *</label>
+        <input id="first_name" name="first_name" type="text" maxlength="40" required />
+      </div>
+      <div class="half">
+        <label for="last_name">Last Name *</label>
+        <input id="last_name" name="last_name" type="text" maxlength="80" required />
+      </div>
+    </div>
+
+    <!-- Email / Phone Row -->
+    <div class="row">
+      <div class="half">
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" maxlength="80" required />
+      </div>
+      <div class="half">
+        <label for="phone">Phone *</label>
+        <input id="phone" name="phone" type="tel" maxlength="40" required />
+      </div>
+    </div>
+
+    <!-- Brand -->
+    <label for="00NKc00000DtxtG">Which brand are you interested in?</label>
+    <select id="00NKc00000DtxtG" name="00NKc00000DtxtG" title="Brand">
+      <option value="">Select one</option>
+      <option value="Dean">Dean</option>
+      <option value="Fybroc">Fybroc</option>
+      <option value="Sethco">Sethco</option>
+    </select>
+
+    <!-- Region -->
+    <label for="00NKc00000Dtg4w">Region</label>
+    <select id="00NKc00000Dtg4w" name="00NKc00000Dtg4w" title="Region">
+      <option value="">Select one</option>
+      <option value="Asia">Asia</option>
+      <option value="China">China</option>
+      <option value="EMEA">EMEA</option>
+      <option value="North America">North America</option>
+      <option value="South America">South America</option>
+    </select>
+
+    <!-- Message -->
+    <label for="description">Message *</label>
+    <textarea id="description" name="description" required></textarea>
+
+    <!-- Submit -->
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
